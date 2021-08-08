@@ -176,7 +176,7 @@ export default class PurchaseManager {
     if (purchaseRecordDoc.exists) {
       // Purchase record found in Firestore. Check if it has been disabled.
       if (purchaseRecordDoc.data().replacedByAnotherPurchase) {
-        // The old purchase has been. We don't need to take further action
+        // The old purchase has been replaced already. We don't need to take further action
         return;
       } else {
         // STEP 2a: Old purchase found in cache, so we disable it
