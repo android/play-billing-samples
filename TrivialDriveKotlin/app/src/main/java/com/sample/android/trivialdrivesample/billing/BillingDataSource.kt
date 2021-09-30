@@ -625,7 +625,7 @@ class BillingDataSource private constructor(
      * @param upgradeSkusVarargs SKUs that the subscription can be upgraded from
      * @return true if launch is successful
      */
-    fun launchBillingFlow(activity: Activity?, sku: String, vararg upgradeSkusVarargs: String) {
+    fun launchBillingFlow(activity: Activity, sku: String, vararg upgradeSkusVarargs: String) {
         val skuDetails = skuDetailsMap[sku]?.value
         if (null != skuDetails) {
             val billingFlowParamsBuilder = BillingFlowParams.newBuilder()
@@ -651,7 +651,7 @@ class BillingDataSource private constructor(
                     )
                 }
                 val br = billingClient.launchBillingFlow(
-                        activity!!,
+                        activity,
                         billingFlowParamsBuilder.build()
                 )
                 if (br.responseCode == BillingClient.BillingResponseCode.OK) {
