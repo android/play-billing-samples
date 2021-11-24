@@ -225,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
         List<AuthUI.IdpConfig> providers = new ArrayList<>();
         // Configure the different methods users can sign in
         providers.add(new AuthUI.IdpConfig.EmailBuilder().build());
-        providers.add(new AuthUI.IdpConfig.GoogleBuilder().build());
 
         startActivityForResult(
                 AuthUI.getInstance()
