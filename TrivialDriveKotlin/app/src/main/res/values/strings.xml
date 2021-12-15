@@ -1,52 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-   Copyright 2012 Google Inc. All rights reserved.
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
 <resources>
-    <string name="app_name">Trivial Drive</string>
-    <string name="title_game_fragment">Trivial Drive</string>
-    <string name="title_make_purchase_fragment">Buy Stuff!</string>
-
-    <string name="menu_consume_premium">Consume Premium (For Testing)</string>
-
-    <string name="header_fuel_your_ride">Fuel Your Ride</string>
-    <string name="header_go_premium">Go Premium</string>
-    <string name="header_subscribe"><a href="https://play.google.com/store/account/subscriptions">Subscribe</a></string>
-
-    <string name="content_description_gas_gauge_indicator">Gas gauge indicator</string>
-    <string name="content_description_free_vs_premium_indicator">Free or Premium Image Indicator</string>
-
-    <string name="button_drive">Drive!</string>
-    <string name="button_buy">Buy!</string>
-
-    <string name="message_infinite_drive">Infinite drive!</string>
-    <string name="message_you_drove">You drove!</string>
-    <string name="message_more_gas_acquired">More gas acquired!</string>
-    <string name="message_premium">You\'re now a premium driver!</string>
-    <string name="message_subscribed">Thank you for subscribing! You have infinite gas!</string>
-    <string name="message_out_of_gas">You\'re out of gas! Buy more!</string>
-
-    <string name="debug_price_not_found">N/A</string>
-    <string name="debug_title_not_found">SKU: \"%1$s\" Not Found</string>
-    <string name="debug_description_not_found">Make sure that you have uploaded an APK to the Google Play developer console, that the correct SKUs have been created for the APK, and the signed-in account has been enabled for testing.</string>
-
-    <string name="error_unable_to_make_purchase">Unable to make purchase.</string>
-
-    <string name="alert_error_message_encoded_public_key_not_set">base64EncodedPublicKey
-        <b>must</b> be set for signature verification. You can add it to <b>local.properties</b>
-        once you have gotten it from Play.\n\n<b>Example: <tt>base64EncodedPublicKey=[key value]</tt>
-        </b></string>
-    <string name="alert_error_title_encoded_public_key_not_set">Public Key Not Set</string>
+  <string name="app_name">Trivial Drive</string>
+  <string name="title_store">Store</string>
+  <string name="title_refuel">Refuel</string>
+  <string name="header_products">Products</string>
+  <string name="header_subscriptions">Subscriptions</string>
+  <string name="label_plan">Plan</string>
+  <string name="label_fuel">Fuel</string>
+  <string name="label_cost">Cost</string>
+  <string name="label_loading">Loading</string>
+  <string name="button_retry">Retry</string>
+  <string name="button_drive">Drive</string>
+  <string name="button_refuel">Refuel</string>
+  <string name="button_store">Store</string>
+  <string name="button_not_enough_coins">Buy more coins</string>
+  <string name="button_not_enough_fuel">Out of fuel</string>
+  <string name="button_purchase_car">Buy %1$s</string>
+  <string name="button_refuel_with_plan">Buy with %1$s plan for %2$d coins</string>
+  <string name="button_subscribe_to_plan">Subscribe to %1$s plan to buy for %2$d coins</string>
+  <string name="alert_key_undefined_title">Public Key Not Set</string>
+  <string name="alert_key_undefined_message">base64EncodedPublicKey must be set
+    for signature verification. You can add it to local.properties once you have
+    gotten it from Play.\n\nExample: base64EncodedPublicKey=[key value]
+  </string>
 </resources>
