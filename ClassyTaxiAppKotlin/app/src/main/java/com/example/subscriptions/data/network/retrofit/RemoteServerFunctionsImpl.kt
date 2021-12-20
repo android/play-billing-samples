@@ -230,7 +230,7 @@ class RemoteServerFunctionsImpl : ServerFunctions {
         subscriptions: MutableLiveData<List<SubscriptionStatus>>
     ) {
         val subs = responseBody["subscriptions"] as List<*>?
-        if (subs == null || subs.isEmpty()) {
+        if (subs == null) {
             Log.w(TAG, "Invalid subscription data")
             return
         }
