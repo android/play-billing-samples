@@ -289,7 +289,7 @@ public class ServerFunctionImpl implements ServerFunctions {
      */
     protected void onSuccessfulSubscriptionCall(Map<String, Object> responseBody, @Nullable MutableLiveData<List<SubscriptionStatus>> subscriptions) {
         List subs = (List) responseBody.get("subscriptions");
-        if (subs.isEmpty()) {
+        if (subs == null) {
             Log.w(TAG, "Invalid subscription data");
             return;
         }
