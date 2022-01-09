@@ -27,7 +27,7 @@ interface SubscriptionStatusApiCall {
     abstract fun fetchSubscriptionStatus(): Call<SubscriptionStatusList>
 
     // Registers Instance ID for Firebase Cloud Messaging.
-    @PUT("subscription_register_v2")
+    @PUT("instanceId_register_v2")
     abstract fun registerInstanceID(@Body instanceId: Map<String, String>): Call<String>
 
     // Unregisters Instance ID for Firebase Cloud Messaging.
