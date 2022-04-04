@@ -590,7 +590,7 @@ public class BillingDataSource implements LifecycleObserver, PurchasesUpdatedLis
      */
     private void processPurchaseList(List<Purchase> purchases, List<String> skusToUpdate) {
         HashSet<String> updatedSkus = new HashSet<>();
-        if (null != purchases) {
+        if (null != purchases && !purchases.isEmpty()) {
             for (final Purchase purchase : purchases) {
                 for (String sku : purchase.getSkus()) {
                     final MutableLiveData<SkuState> skuStateLiveData = skuStateMap.get(sku);
