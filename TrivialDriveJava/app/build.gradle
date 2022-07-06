@@ -17,13 +17,13 @@ android {
             storePassword "${password}"
         }*/
     }
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId 'com.sample.android.trivialdrivesample'
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 8
         versionName "1.5"
         javaCompileOptions {
