@@ -27,7 +27,7 @@ class TrivialDriveApplication : Application() {
         private val applicationScope = GlobalScope
         private val gameStateModel = GameStateModel(this@TrivialDriveApplication)
         private val billingDataSource = BillingDataSource.getInstance(
-            this@TrivialDriveApplication,
+            applicationContext,
             applicationScope,
             TrivialDriveRepository.INAPP_SKUS,
             TrivialDriveRepository.SUBSCRIPTION_SKUS,
