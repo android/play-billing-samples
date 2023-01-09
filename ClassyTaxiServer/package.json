@@ -14,8 +14,8 @@
   "main": "lib/index.js",
   "dependencies": {
     "express": "^4.17.1",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^3.13.0",
+    "firebase-admin": "^11.4.1",
+    "firebase-functions": "^3.24.1",
     "googleapis": "^67.0.0"
   },
   "devDependencies": {
