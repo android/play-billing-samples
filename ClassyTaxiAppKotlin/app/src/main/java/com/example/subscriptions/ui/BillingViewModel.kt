@@ -66,7 +66,7 @@ class BillingViewModel(application: Application) : AndroidViewModel(application)
      */
     fun openPlayStoreSubscriptions() {
         val hasBasic = deviceHasGooglePlaySubscription(purchases.value, Constants.BASIC_PRODUCT)
-        val hasPremium = deviceHasGooglePlaySubscription(purchases.value, Constants.BASIC_PRODUCT)
+        val hasPremium = deviceHasGooglePlaySubscription(purchases.value, Constants.PREMIUM_PRODUCT)
         Log.d(TAG, "hasBasic: $hasBasic, hasPremium: $hasPremium")
         when {
             hasBasic && !hasPremium -> {
