@@ -750,6 +750,13 @@ public class BillingDataSource implements LifecycleObserver, PurchasesUpdatedLis
                                     }
                                     break;
                                 case 0:
+                                    br = billingClient.launchBillingFlow(activity,
+                                            billingFlowParamsBuilder.build());
+                                    if (br.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+                                        billingFlowInProcess.postValue(true);
+                                    } else {
+                                        Log.e(TAG, "Billing failed: + " + br.getDebugMessage());
+                                    }
                                     break;
                                 default:
                                     Log.e(TAG, heldSubscriptions.size() +
