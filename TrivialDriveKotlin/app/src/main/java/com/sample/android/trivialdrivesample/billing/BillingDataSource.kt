@@ -17,7 +17,7 @@
 package com.sample.android.trivialdrivesample.billing
 
 import android.app.Activity
-import android.app.Application
+import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -95,8 +95,14 @@ private const val RECONNECT_TIMER_START_MILLISECONDS = 1L * 1000L
 private const val RECONNECT_TIMER_MAX_TIME_MILLISECONDS = 1000L * 60L * 15L // 15 minutes
 private const val SKU_DETAILS_REQUERY_TIME = 1000L * 60L * 60L * 4L // 4 hours
 
+/**
+ * Our constructor.  Since we are a singleton, this is only used internally.
+ * @param context Android application context.
+ * @param knownInappSKUs SKUs of in-app purchases the source should know about
+ * @param knownSubscriptionSKUs SKUs of subscriptions the source should know about
+ */
 class BillingDataSource private constructor(
-        application: Application,
+        context: Context,
         private val defaultScope: CoroutineScope,
         knownInappSKUs: Array<String>?,
         knownSubscriptionSKUs: Array<String>?,
@@ -738,14 +744,14 @@ class BillingDataSource private constructor(
         // Standard boilerplate double check locking pattern for thread-safe singletons.
         @JvmStatic
         fun getInstance(
-                application: Application,
+                context: Context,
                 defaultScope: CoroutineScope,
                 knownInappSKUs: Array<String>?,
                 knownSubscriptionSKUs: Array<String>?,
                 autoConsumeSKUs: Array<String>?
         ) = sInstance ?: synchronized(this) {
             sInstance ?: BillingDataSource(
-                    application,
+                    context,
                     defaultScope,
                     knownInappSKUs,
                     knownSubscriptionSKUs,
@@ -755,12 +761,6 @@ class BillingDataSource private constructor(
         }
     }
 
-    /**
-     * Our constructor.  Since we are a singleton, this is only used internally.
-     * @param application Android application class.
-     * @param knownInappSKUs SKUs of in-app purchases the source should know about
-     * @param knownSubscriptionSKUs SKUs of subscriptions the source should know about
-     */
     init {
         this.knownInappSKUs = if (knownInappSKUs == null) {
             ArrayList()
@@ -777,7 +777,7 @@ class BillingDataSource private constructor(
             knownAutoConsumeSKUs.addAll(listOf(*autoConsumeSKUs))
         }
         initializeFlows()
-        billingClient = BillingClient.newBuilder(application)
+        billingClient = BillingClient.newBuilder(context)
             .setListener(this)
             .enablePendingPurchases()
             .build()
