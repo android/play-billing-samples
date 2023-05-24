@@ -10,7 +10,7 @@ buildscript {
 
     }
     ext {
-        version_room = "2.3.0"
+        version_room = "2.4.2"
         version_navigation = "2.3.5"
         version_billing = "4.0.0"
         version_lifecycle = "2.3.1"
