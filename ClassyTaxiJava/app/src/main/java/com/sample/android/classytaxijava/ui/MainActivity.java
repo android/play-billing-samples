@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
         container.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
         tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(container));
 
-        authenticationViewModel = ViewModelProviders.of(this).get(FirebaseUserViewModel.class);
-        billingViewModel = ViewModelProviders.of(this).get(BillingViewModel.class);
-        subscriptionViewModel = ViewModelProviders.of(this).get(SubscriptionStatusViewModel.class);
+        authenticationViewModel = new ViewModelProvider(this).get(FirebaseUserViewModel.class);
+        billingViewModel = new ViewModelProvider(this).get(BillingViewModel.class);
+        subscriptionViewModel = new ViewModelProvider(this).get(SubscriptionStatusViewModel.class);
 
         billingClientLifecycle = ((SubApp) getApplication()).getBillingClientLifecycle();
         getLifecycle().addObserver(billingClientLifecycle);
