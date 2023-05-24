@@ -123,6 +123,14 @@ public class SubscriptionStatus {
         isPaused = paused;
     }
 
+    public boolean isAcknowledged() {
+        return isAcknowledged;
+    }
+
+    public void setAcknowledged(boolean acknowledged) {
+        isAcknowledged = acknowledged;
+    }
+
     public Long getAutoResumeTimeMillis() {
         return autoResumeTimeMillis;
     }
