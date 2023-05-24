@@ -84,11 +84,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$version_lifecycle"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin"
 
-    // The following rules are for compiling on environments running JDK9+.
-    // In this project, these rules are necessary because data binding is enabled. It fixes the
-    // error 'java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException' that occurs when
-    // the project is assembled through the command line with an environment running JDK9+.
-    compileOnly "com.github.pengrad:jdk9-deps:$jdk9DepsVersion"
     if (project.hasProperty('kapt')) {
         kapt "javax.xml.bind:jaxb-api:$jaxbApiVersion"
         kapt "com.sun.xml.bind:jaxb-core:$jaxbCoreVersion"
