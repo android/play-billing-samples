@@ -72,7 +72,7 @@ buildscript {
 
         // Tools versions.
         gradleGoogleVersion = '4.3.10'
-        gradleToolsVersion = '7.4.2'
+        gradleToolsVersion = '8.1.4'
         kotlinVersion = '1.8.10'
 
         // Testing versions.
